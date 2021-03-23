@@ -58,8 +58,8 @@ int main()
     double mass = get_mass();
     double kinetic_energy = calculate_kinetic_energy(speed, speed_of_light, mass);
 
-    cout << "With speed = " << speed  << " kinetic energy = " << kinetic_energy  << endl;
-    cout << "Kinetic energy by non_relativistic = " << kinetic_energy  << endl;
+    cout << "With speed = " << speed << " kinetic energy = " << kinetic_energy << endl;
+    cout << "Kinetic energy by non_relativistic = " << kinetic_energy << endl;
 
     return 0;
 }
