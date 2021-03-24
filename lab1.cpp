@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <limits>
 
 using namespace std;
 
@@ -15,7 +16,7 @@ double get_speed()
         if (cin.fail() || speed < 0)
         {
             cin.clear();
-            cin.ignore(1000, '\n');
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
             cout << "Incorrect value passed" << endl;
         }
         else
@@ -46,7 +47,7 @@ double calculate_kinetic_energy(
     return (numerator / denominator) - numerator;
 }
 
-double non_relativistic(double speed, double mass)
+double calcutale_non_relativistic(double speed, double mass)
 {
     return mass * pow(speed, 2) / 2;
 }
@@ -57,9 +58,10 @@ int main()
     double speed_of_light = get_speed_of_light();
     double mass = get_mass();
     double kinetic_energy = calculate_kinetic_energy(speed, speed_of_light, mass);
+    double non_relativistic = calcutale_non_relativistic(speed, mass);
 
     cout << "With speed = " << speed << " kinetic energy = " << kinetic_energy << endl;
-    cout << "Kinetic energy by non_relativistic = " << kinetic_energy << endl;
+    cout << "Kinetic energy by non_relativistic = " << non_relativistic << endl;
 
     return 0;
 }
